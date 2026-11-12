@@ -1,0 +1,5 @@
+{
+  "id": "neon", "name": "Neon", "dark": true,
+  "cornerRadius": 4, "fontScale": 1.05,
+  "colors": { "primary": "#FF2E93", "background": "#05010F", "surface": "#140A2A", "onBackground": "#F5E9FF", "accent": "#00F0FF" }
+}

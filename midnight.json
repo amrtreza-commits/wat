@@ -1,0 +1,5 @@
+{
+  "id": "midnight", "name": "Midnight", "dark": true,
+  "cornerRadius": 20, "fontScale": 1.0,
+  "colors": { "primary": "#4FC3F7", "background": "#0D1117", "surface": "#161B22", "onBackground": "#E6EDF3", "accent": "#7EE787" }
+}

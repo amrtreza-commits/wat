@@ -1,0 +1,24 @@
+name: Build APK
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Susun folder proyek
+        run: |
+          mkdir -p app/src/main/java/dev/watchbridge/ble app/src/main/java/dev/watchbridge/theme app/src/main/assets/themes
+          mv MainActivity.kt app/src/main/java/dev/watchbridge/
+          mv BleManager.kt QrPair.kt WatchProtocol.kt app/src/main/java/dev/watchbridge/ble/
+          mv AppTheme.kt app/src/main/java/dev/watchbridge/theme/
+          mv midnight.json neon.json paper.json app/src/main/assets/themes/
+          mv AndroidManifest.xml app/src/main/
+          mv app-build.gradle.kts app/build.gradle.kts
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 17 }
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+        with: { gradle-version: 8.7 }
+      - run: gradle assembleDebug --no-daemon
+      - uses: actions/upload-artifact@v4
+        with: { name: WatchBridge-debug-apk, path: app/build/outputs/apk/debug/app-debug.apk }

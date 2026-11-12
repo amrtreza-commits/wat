@@ -1,0 +1,5 @@
+{
+  "id": "paper", "name": "Paper", "dark": false,
+  "cornerRadius": 12, "fontScale": 1.0,
+  "colors": { "primary": "#1F6FEB", "background": "#FAFAF7", "surface": "#FFFFFF", "onBackground": "#1B1F24", "accent": "#D9480F" }
+}
